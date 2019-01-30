@@ -19,10 +19,11 @@ describe('<Dashboard/>', () => {
         const { getByText } = render(<Dashboard />);
 
         const gateButton = getByText(/close gate/i);
-        const button = getByText(/unlocked/i)
+        const button = getByText(/lock gate/i)
         fireEvent.click(gateButton);
         fireEvent.click(button);
 
-        expect(button).toHaveTextContent(/locked/i);
+        expect(button).toHaveTextContent(/unlock gate/i);
     })
+
 })
